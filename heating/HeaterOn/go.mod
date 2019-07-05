@@ -1,4 +1,4 @@
-module github.com/jake-mok-nelson/home-automation/heating/HeaterOn/
+module github.com/jake-mok-nelson/home-automation/heating/HeaterOn
 
 go 1.11
 

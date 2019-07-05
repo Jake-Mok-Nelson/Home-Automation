@@ -1,4 +1,4 @@
-module github.com/jake-mok-nelson/home-automation/heating/HeaterOff/
+module github.com/jake-mok-nelson/home-automation/heating/HeaterOff
 
 go 1.11
 
