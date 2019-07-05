@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ivandelabeldad/kasa-go"
+	"github.com/jake-mok-nelson/kasa-go"
 )
 
 // Turns the heater off
