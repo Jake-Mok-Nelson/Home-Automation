@@ -21,7 +21,7 @@ func HeaterOff(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Open our jsonFile
-	jsonFile, err := os.Open(".creds.json")
+	jsonFile, err := os.Open("creds.json")
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)

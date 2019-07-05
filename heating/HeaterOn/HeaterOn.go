@@ -26,7 +26,7 @@ func HeaterOn(w http.ResponseWriter, r *http.Request) {
 		WeatherKey string `json:"weatherkey"` // This is gotten from the openweatherapi, it's free as long as you don't query too often
 	}
 
-	jsonFile, err := os.Open(".creds.json")
+	jsonFile, err := os.Open("creds.json")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))
