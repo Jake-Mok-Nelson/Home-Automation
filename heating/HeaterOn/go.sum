@@ -1,0 +1,6 @@
+github.com/briandowns/openweathermap v0.0.0-20180804155945-5f41b7c9d92d h1:28xWzPQ9bdGxKAAwQpZipZZ9Xz8kQcgMPF9cZnvMeuI=
+github.com/briandowns/openweathermap v0.0.0-20180804155945-5f41b7c9d92d/go.mod h1:8g1Bgq9PbPpXIA3sdlWmWf2JpiWGJee/O4Q+ddYO6+k=
+github.com/ivandelabeldad/kasa-go v0.0.0-20180607172347-f3d42a38f123 h1:TPsdgil311bSOIZCxIhLAi+iAYH7RQrLesN3ZM8X6pU=
+github.com/ivandelabeldad/kasa-go v0.0.0-20180607172347-f3d42a38f123/go.mod h1:8+JT68z57aDWxPTajC8hIbD8JWcZqpLEvJ2P7k6bt+c=
+github.com/satori/go.uuid v1.2.0 h1:0uYX9dsZ2yD7q2RtLRtPSdGDWzjeM3TbMJP9utgA0ww=
+github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdhQKdks0=
