@@ -27,7 +27,7 @@ Deploying function (may take a while - up to 2 minutes)...done.
 availableMemoryMb: 256
 entryPoint: HelloWorld
 httpsTrigger:
-  url: https://us-central1-<PROJECT_ID>.cloudfunctions.net/HelloWorld
+  url: https://us-central1-<PROJECT_ID>.cloudfunctions.net/HeaterOn
 labels:
   deployment-tool: cli-gcloud
 ...
