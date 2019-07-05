@@ -1,6 +1,6 @@
-module github.com/jake-mok-nelson/home-automation/heading/HeaterOn/
+module github.com/jake-mok-nelson/home-automation/heating/HeaterOn/
 
-go 1.12
+go 1.11
 
 require (
 	github.com/briandowns/openweathermap v0.0.0-20180804155945-5f41b7c9d92d

@@ -9,28 +9,9 @@ import (
 	"os"
 
 	"github.com/ivandelabeldad/kasa-go"
-	"github.com/jake-mok-nelson/home-automation/common/writers"
 )
 
 // Turns the heater off
-func NewMessageWriter(message string) *JSONMessageWriter {
-	return &JSONMessageWriter{
-		Message: message,
-	}
-}
-
-func (jw *JSONMessageWriter) JSONString() (string, error) {
-	messageResponse := map[string]interface{}{
-		"data": map[string]string{
-			"message": jw.Message,
-		},
-	}
-	bytesValue, err := json.Marshal(messageResponse)
-	if err != nil {
-		return "", err
-	}
-	return string(bytesValue), nil
-}
 
 func HeaterOff(w http.ResponseWriter, r *http.Request) {
 
@@ -91,16 +72,6 @@ func HeaterOff(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Print("Heater turned off successfully!")
-
-	jw := writers.NewMessageWriter(message)
-	jsonString, err := jw.JSONString()
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte(err.Error()))
-		log.Println(err.Error())
-		return
-	}
 	// all good. write our message.
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(jsonString))
 }

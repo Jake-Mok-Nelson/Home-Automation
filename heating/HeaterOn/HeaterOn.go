@@ -67,22 +67,22 @@ func HeaterOn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w, err := owm.NewCurrent("C", "en", creds.WeatherKey) // Celsius, english, weatherapi key
+	wh, err := owm.NewCurrent("C", "en", creds.WeatherKey) // Celsius, english, weatherapi key
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))
 		log.Println(err.Error())
 		return
 	}
-	err = w.CurrentByName(city)
+	err = wh.CurrentByName(city)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))
 		log.Println(err.Error())
 		return
 	}
-	currentTemp := w.Main.Temp //Let's make this shit more readable
-	if w.Main.Temp <= tempThreshold {
+	currentTemp := wh.Main.Temp //Let's make this shit more readable
+	if wh.Main.Temp <= tempThreshold {
 		fmt.Printf("\nIt's pretty chilly in %s at %f, turning on the heater.\n", city, currentTemp)
 		err = heater.TurnOn()
 		if err != nil {
@@ -96,15 +96,7 @@ func HeaterOn(w http.ResponseWriter, r *http.Request) {
 		println("Heat is above threshold so I won't turn the heater on.")
 	}
 
-	jw := writers.NewMessageWriter(message)
-	jsonString, err := jw.JSONString()
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte(err.Error()))
-		log.Println(err.Error())
-		return
-	}
 	// all good. write our message.
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(jsonString))
+
 }
