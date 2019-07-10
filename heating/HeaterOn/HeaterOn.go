@@ -59,8 +59,8 @@ func main() {
 	if err != nil {
 		log.Println(err.Error())
 	}
-	currentTemp := wh.Main.Temp //Let's make this shit more readable
-	if wh.Main.Temp <= tempThreshold {
+	currentTemp := wh.Main.Temp
+	if currentTemp <= tempThreshold {
 		fmt.Printf("\nIt's pretty chilly in %s at %f, turning on the heater.\n", city, currentTemp)
 
 		err = heater.TurnOn()

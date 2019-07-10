@@ -16,5 +16,7 @@ Requires a free account on [Openweathermap](https://openweathermap.org/)
 ## How to use
 
 Create creds.json file and populate the fields.
+
 > go get
+
 > go run HeaterOff.go
